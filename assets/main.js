@@ -29,6 +29,15 @@ const paletaColores = {
   * @type {Array}
   */
  const formatosPermitidos = ['zip', 'rar', 'txt', 'pdf', 'docx', 'doc', 'xls', 'xlsx', 'jpeg', 'jpg', 'gif', 'png'];
+ /**
+  * Establece el año en el footer
+  * @returns {void}
+  */
+  function establecerYear(){ 
+    const today = new Date();
+    const nodoYear = document.querySelector(".footer__copy-year"); 
+    nodoYear.innerHTML = today.getFullYear();
+}
 /**
   * Crea el nodo del documento seleccionado
   * @param {string} fileName Nombre del documento seleccionada
@@ -96,6 +105,8 @@ const paletaColores = {
     //Pintamos el documento
     contenedorFiles.appendChild(container);
 }
+//Pintar año
+establecerYear();
 const fileUpload = document.querySelector("#selector__input");
 const contenedorFiles = document.querySelector(".selector__galeria");
 //Subir documento
